@@ -14,23 +14,29 @@ class News {
     var response = await http.get(url);
     var jsonData = jsonDecode(response.body);
 
-    if (jsonData['status'] == 'ok') {
-      jsonData['articles'].forEach((element) {
-        //check if img or description is missing
-        if (element['urlToImage'] != null && element['description'] != null) {
-          ArticleModel articleModel = ArticleModel(
-            title: element['title'],
-            author: element['author'],
-            description: element['description'],
-            url: element['url'],
-            urlToImage: element['urlToImage'],
-            content: element['content'],
-          );
+    var list = jsonData['articles'] as List;
+    print(list.runtimeType);
+    List<ArticleModel> articlesList =
+        list.map((e) => ArticleModel.fromJson(e)).toList();
+    news = (articlesList);
 
-          news.add(articleModel);
-        }
-      });
-    }
+    // if (jsonData['status'] == 'ok') {
+    //   jsonData['articles'].forEach((element) {
+    //     //check if img or description is missing
+    //     if (element['urlToImage'] != null && element['description'] != null) {
+    //       ArticleModel articleModel = ArticleModel(
+    //         title: element['title'],
+    //         author: element['author'],
+    //         description: element['description'],
+    //         url: element['url'],
+    //         urlToImage: element['urlToImage'],
+    //         content: element['content'],
+    //       );
+
+    //       news.add(articleModel);
+    //     }
+    //   });
+    // }
   }
 }
 
@@ -42,22 +48,28 @@ class CategoryNewsClass {
     var response = await http.get(url);
     var jsonData = jsonDecode(response.body);
 
-    if (jsonData['status'] == 'ok') {
-      jsonData['articles'].forEach((element) {
-        //check if img or description is missing
-        if (element['urlToImage'] != null && element['description'] != null) {
-          final ArticleModel articleModel = ArticleModel(
-            title: element['title'],
-            author: element['author'],
-            description: element['description'],
-            url: element['url'],
-            urlToImage: element['urlToImage'],
-            content: element['content'],
-          );
-
-          news.add(articleModel);
-        }
-      });
-    }
+    var list = jsonData['articles'] as List;
+    print(list.runtimeType);
+    List<ArticleModel> articlesList =
+        list.map((e) => ArticleModel.fromJson(e)).toList();
+    news = (articlesList);
   }
+
+  // if (jsonData['status'] == 'ok') {
+  //   jsonData['articles'].forEach((element) {
+  //     //check if img or description is missing
+  //     if (element['urlToImage'] != null && element['description'] != null) {
+  //       final ArticleModel articleModel = ArticleModel(
+  //         title: element['title'],
+  //         author: element['author'],
+  //         description: element['description'],
+  //         url: element['url'],
+  //         urlToImage: element['urlToImage'],
+  //         content: element['content'],
+  //       );
+
+  //       news.add(articleModel);
+  //     }
+  //   });
+  // }
 }
