@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import './views/home.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+import 'package:redux_logging/redux_logging.dart';
+import 'package:redux_thunk/redux_thunk.dart';
 
 void main() {
   runApp(const MyApp());

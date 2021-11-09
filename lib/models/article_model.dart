@@ -14,6 +14,17 @@ class ArticleModel {
     this.content,
     this.urlToImage,
   });
+
+  factory ArticleModel.fromJson(Map<String, dynamic> json) {
+    return ArticleModel(
+      author: json['author'],
+      title: json['title'],
+      description: json['description'],
+      url: json['url'],
+      urlToImage: json['urlToimage'],
+      content: json['content'],
+    );
+  }
 }
 
 //gotten from news api json

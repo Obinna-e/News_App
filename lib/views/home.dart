@@ -4,6 +4,7 @@ import 'package:flutternews/helper/data.dart';
 import 'package:flutternews/models/article_model.dart';
 import 'package:flutternews/models/category_model.dart';
 import 'package:flutternews/views/article_view.dart';
+import 'package:flutternews/views/category_news.dart';
 import '../helper/news.dart';
 
 class Home extends StatefulWidget {
@@ -113,15 +114,24 @@ class _HomeState extends State<Home> {
 }
 
 class CategoryTile extends StatelessWidget {
-  final imageUrl;
-  final categoryName;
+  final String? imageUrl;
+  final String? categoryName;
 
   CategoryTile({this.imageUrl, this.categoryName});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CategoryNews(
+              category: categoryName!.toLowerCase(),
+            ),
+          ),
+        ); //Because the categories were in capital
+      },
       child: Container(
         margin: const EdgeInsets.only(
           right: 16,
@@ -131,7 +141,7 @@ class CategoryTile extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
               child: CachedNetworkImage(
-                imageUrl: imageUrl,
+                imageUrl: imageUrl!,
                 width: 120,
                 height: 60,
                 fit: BoxFit.cover,
@@ -145,7 +155,7 @@ class CategoryTile extends StatelessWidget {
                 color: Colors.black26,
               ),
               child: Text(
-                categoryName,
+                categoryName!,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 14,
@@ -189,8 +199,11 @@ class BlogTile extends StatelessWidget {
         child: Column(
           children: [
             ClipRRect(
-                borderRadius: BorderRadius.circular(6),
-                child: Image.network(imageUrl!)),
+              borderRadius: BorderRadius.circular(6),
+              child: Image.network(
+                imageUrl!,
+              ),
+            ),
             Text(
               title!,
               style: const TextStyle(
