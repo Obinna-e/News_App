@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutternews/helper/data.dart';
-import 'package:flutternews/models/articleModel.dart';
+import 'package:flutternews/models/article_model.dart';
 import 'package:flutternews/models/category_model.dart';
 import 'package:flutternews/views/article_view.dart';
 import 'package:flutternews/views/category_news.dart';

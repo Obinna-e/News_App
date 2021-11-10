@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import '../models/articleModel.dart';
+import '../models/article_model.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_thunk/redux_thunk.dart';
 import 'package:http/http.dart' as http;
@@ -24,14 +24,7 @@ class News {
       jsonData['articles'].forEach((element) {
         //check if img or description is missing
         if (element['urlToImage'] != null && element['description'] != null) {
-          ArticleModel articleModel = ArticleModel(
-            title: element['title'],
-            author: element['author'],
-            description: element['description'],
-            url: element['url'],
-            urlToImage: element['urlToImage'],
-            content: element['content'],
-          );
+          ArticleModel articleModel = ArticleModel.fromJson(element);
 
           news.add(articleModel);
         }
@@ -58,14 +51,7 @@ class CategoryNewsClass {
       jsonData['articles'].forEach((element) {
         //check if img or description is missing
         if (element['urlToImage'] != null && element['description'] != null) {
-          final ArticleModel articleModel = ArticleModel(
-            title: element['title'],
-            author: element['author'],
-            description: element['description'],
-            url: element['url'],
-            urlToImage: element['urlToImage'],
-            content: element['content'],
-          );
+          final ArticleModel articleModel = ArticleModel.fromJson(element);
 
           news.add(articleModel);
         }
