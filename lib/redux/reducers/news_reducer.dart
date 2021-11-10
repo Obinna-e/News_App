@@ -1,5 +1,7 @@
+import 'package:flutternews/models/articleModel.dart';
+
 import '../../models/app_state.dart';
-import '../../models/article_Model.dart';
+
 import '../actions/news_actions.dart';
 
 AppState appReducer(AppState state, dynamic action) {

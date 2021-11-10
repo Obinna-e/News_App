@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import '../models/article_model.dart';
+import 'package:flutternews/models/articleModel.dart';
+
 import 'package:redux/redux.dart';
 import 'package:redux_thunk/redux_thunk.dart';
 import 'package:http/http.dart' as http;

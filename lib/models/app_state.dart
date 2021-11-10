@@ -1,4 +1,4 @@
-import 'package:flutternews/models/article_Model.dart';
+import 'articleModel.dart';
 import 'package:meta/meta.dart';
 
 @immutable

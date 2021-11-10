@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutternews/helper/news.dart';
-import 'package:flutternews/models/article_model.dart';
+import 'package:flutternews/models/articleModel.dart';
 
 import 'home.dart';
 

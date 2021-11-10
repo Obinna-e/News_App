@@ -1,8 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:redux_persist/redux_persist.dart';
 
-part 'article_model.freezed.dart';
-part 'article_model.g.dart';
+part 'articleModel.freezed.dart';
+part 'articleModel.g.dart';
 
 @freezed
 class ArticleModel with _$ArticleModel {
