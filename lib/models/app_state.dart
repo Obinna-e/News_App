@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutternews/models/article_model.dart';
+import 'package:flutternews/models/articleModel.dart';
 
 @immutable
 class AppState {

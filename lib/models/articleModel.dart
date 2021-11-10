@@ -9,6 +9,7 @@ part 'articleModel.g.dart';
 class ArticleModel with _$ArticleModel {
   const ArticleModel._();
 
+  // ignore: invalid_annotation_target
   @JsonSerializable()
   factory ArticleModel({
     required String author,
