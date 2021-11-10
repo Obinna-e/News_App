@@ -6,18 +6,18 @@ part of 'articleModel.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ArticleModel _$_$_ArticleModelFromJson(Map<String, dynamic> json) {
-  return _$_ArticleModel(
-    author: json['author'] as String,
-    title: json['title'] as String,
-    description: json['description'] as String,
-    url: json['url'] as String,
+ArticleModel _$ArticleModelFromJson(Map<String, dynamic> json) {
+  return ArticleModel(
+    author: json['author'] as String?,
+    title: json['title'] as String?,
+    description: json['description'] as String?,
+    url: json['url'] as String?,
     urlToImage: json['urlToImage'] as String?,
-    content: json['content'] as String,
+    content: json['content'] as String?,
   );
 }
 
-Map<String, dynamic> _$_$_ArticleModelToJson(_$_ArticleModel instance) =>
+Map<String, dynamic> _$ArticleModelToJson(ArticleModel instance) =>
     <String, dynamic>{
       'author': instance.author,
       'title': instance.title,
