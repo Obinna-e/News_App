@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutternews/models/article_model.dart';
+import 'package:flutternews/models/article_Model.dart';
+import 'package:meta/meta.dart';
 
 @immutable
 class AppState {
@@ -8,6 +8,7 @@ class AppState {
   AppState({
     required this.articles,
   });
+
   factory AppState.initial() {
     return AppState(
       articles: [],
