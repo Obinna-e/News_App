@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'article_model.dart';
+part of 'articleModel.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -185,15 +185,17 @@ class __$ArticleModelCopyWithImpl<$Res> extends _$ArticleModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 @JsonSerializable()
-class _$_ArticleModel implements _ArticleModel {
+class _$_ArticleModel extends _ArticleModel {
   _$_ArticleModel(
       {required this.author,
       required this.title,
       required this.description,
       required this.url,
       this.urlToImage,
-      required this.content});
+      required this.content})
+      : super._();
 
   factory _$_ArticleModel.fromJson(Map<String, dynamic> json) =>
       _$_$_ArticleModelFromJson(json);
@@ -257,7 +259,7 @@ class _$_ArticleModel implements _ArticleModel {
   }
 }
 
-abstract class _ArticleModel implements ArticleModel {
+abstract class _ArticleModel extends ArticleModel {
   factory _ArticleModel(
       {required String author,
       required String title,
@@ -265,6 +267,7 @@ abstract class _ArticleModel implements ArticleModel {
       required String url,
       String? urlToImage,
       required String content}) = _$_ArticleModel;
+  _ArticleModel._() : super._();
 
   factory _ArticleModel.fromJson(Map<String, dynamic> json) =
       _$_ArticleModel.fromJson;

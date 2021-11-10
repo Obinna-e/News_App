@@ -1,10 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-part 'article_model.freezed.dart';
-part 'article_model.g.dart';
+part 'articleModel.freezed.dart';
+part 'articleModel.g.dart';
 
+@immutable
 @freezed
 class ArticleModel with _$ArticleModel {
+  const ArticleModel._();
+
+  @JsonSerializable()
   factory ArticleModel({
     required String author,
     required String title,
