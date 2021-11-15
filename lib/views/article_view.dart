@@ -25,7 +25,7 @@ class _ArticleViewState extends State<ArticleView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Flutter',
+              'Boring',
               style: TextStyle(
                 color: Colors.black,
               ),
